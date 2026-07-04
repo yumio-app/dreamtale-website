@@ -423,12 +423,9 @@
 
 <script>
 /* ------------------------------------------------------------------ config
-   Fill these in to wire the waitlist to Supabase (the anon key is safe to
-   publish — the table only allows inserts, never reads).
-   Leave empty for a clean local fallback (stores signups in localStorage). */
+ */
 window.DREAMTALE_CONFIG = {
-  supabaseUrl: '',      // e.g. 'https://abcd1234.supabase.co'
-  supabaseAnonKey: '',
+  waitlistEndpoint: 'https://ulfyxojhsnazdtzgyjkt.supabase.co/functions/v1/join-waitlist',
 };
 
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -550,28 +547,32 @@ const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matc
 })();
 
 /* ---------- waitlist form ---------- */
+/* ---------- waitlist form ---------- */
 (function waitlist(){
   const form = document.getElementById('waitlistForm');
   const input = document.getElementById('waitlistEmail');
   const btn = document.getElementById('waitlistBtn');
   const msg = document.getElementById('formMsg');
-  let source = 'website';
 
-  document.querySelectorAll('[data-source]').forEach((a) => {
-    a.addEventListener('click', () => { source = a.dataset.source; input.focus(); });
-  });
+  const source = 'app-waitlist';
 
   function celebrate(){
     if (reducedMotion) return;
+
     const rect = btn.getBoundingClientRect();
+
     for (let i = 0; i < 14; i++) {
       const s = document.createElement('div');
       s.className = 'spark';
       s.textContent = '✦';
       s.style.left = (rect.left + rect.width / 2) + 'px';
       s.style.top = (rect.top + rect.height / 2) + 'px';
+
       document.getElementById('fx').appendChild(s);
-      const ang = Math.random() * Math.PI * 2, dist = 40 + Math.random() * 80;
+
+      const ang = Math.random() * Math.PI * 2;
+      const dist = 40 + Math.random() * 80;
+
       s.animate(
         [
           { transform: 'translate(0,0) scale(1)', opacity: 1 },
@@ -584,50 +585,49 @@ const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matc
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
+
     const email = input.value.trim().toLowerCase();
+
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) {
       msg.textContent = 'Please enter a valid email address.';
       msg.className = 'form-msg err';
       return;
     }
+
     btn.disabled = true;
     btn.textContent = 'Joining…';
     msg.textContent = '';
+    msg.className = 'form-msg';
 
-    const { supabaseUrl, supabaseAnonKey } = window.DREAMTALE_CONFIG;
     try {
-      if (supabaseUrl && supabaseAnonKey) {
-        const res = await fetch(`${supabaseUrl}/functions/v1/waitlist`, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            Authorization: `Bearer ${supabaseAnonKey}`,
-            apikey: supabaseAnonKey,
-          },
-          body: JSON.stringify({ email, source }),
-        });
-        if (!res.ok) throw new Error('Request failed');
-      } else {
-        const list = JSON.parse(localStorage.getItem('dreamtale.waitlist') || '[]');
-        if (!list.some((x) => x.email === email && x.source === source)) {
-          list.push({ email, source, at: new Date().toISOString() });
-        }
-        localStorage.setItem('dreamtale.waitlist', JSON.stringify(list));
-        await new Promise((r) => setTimeout(r, 500));
+      const res = await fetch(window.DREAMTALE_CONFIG.waitlistEndpoint, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email,
+          source,
+        }),
+      });
+
+      const result = await res.json().catch(() => ({}));
+
+      if (!res.ok) {
+        throw new Error(result.error || 'Something went wrong — please try again in a moment.');
       }
-      msg.textContent = source === 'printed-books'
-        ? '📖 You’re on the printed book list. Sweet dreams!'
-        : '🌙 You’re on the list. Sweet dreams!';
+
+      msg.textContent = '🌙 You’re on the DreamTale app waitlist. Sweet dreams!';
       msg.className = 'form-msg ok';
+
       celebrate();
       form.reset();
     } catch (err) {
-      msg.textContent = 'Something went wrong — please try again in a moment.';
+      msg.textContent = err.message || 'Something went wrong — please try again in a moment.';
       msg.className = 'form-msg err';
     } finally {
       btn.disabled = false;
       btn.textContent = 'Join waitlist';
-      source = 'website';
     }
   });
 })();
