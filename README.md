@@ -15,3 +15,5 @@ attorney review required), `assets/img/` (logo + app screens).
 
 The sibling `../demo/index.html` is the interactive app prototype — link it
 from campaigns or use it for investor/user demos.
+
+Test README.md update for deployment process
