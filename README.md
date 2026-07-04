@@ -1,26 +1,17 @@
 # DreamTale Website
 
-This is the static landing page for DreamTale.
+Static site — no build step, no dependencies.
 
-## Files
+- **Preview:** open `index.html` in a browser.
+- **Deploy:** drag this folder into [Netlify Drop](https://app.netlify.com/drop),
+  or `vercel deploy`, or any static host.
+- **Waitlist backend:** fill in `window.DREAMTALE_CONFIG` at the bottom of
+  `index.html` with your Supabase URL + anon key (safe to publish — the
+  waitlist table is insert-only for the public). Until then, signups fall back
+  to localStorage so the form still demos correctly.
 
-- `index.html` — the main website page.
+Files: `index.html` (landing), `privacy.html`, `terms.html` (placeholders —
+attorney review required), `assets/img/` (logo + app screens).
 
-## How to view locally
-
-Open `index.html` directly in a browser, or use VS Code Live Server.
-
-## How to deploy on Vercel
-
-1. Log in to Vercel.
-2. Create a new project.
-3. Import this folder/repository.
-4. Use the following settings:
-   - Framework Preset: Other
-   - Build Command: leave blank
-   - Output Directory: `./`
-5. Deploy.
-
-## Notes
-
-The current website is a static HTML page. The waitlist form may need to be connected to a real email capture service or backend before launch.
+The sibling `../demo/index.html` is the interactive app prototype — link it
+from campaigns or use it for investor/user demos.
