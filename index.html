@@ -294,12 +294,16 @@
         <span>🛡️ Parent-approved</span><span>🧒 Child-safe</span><span>🎨 Illustrated</span><span>🎙️ Softly narrated</span>
       </div>
     </div>
-    <div class="stage reveal">
-      <div class="moon"></div>
-      <div class="phone"><img src="assets/img/dreamtale-app-splash-screen.webp" alt="DreamTale app" loading="eager"></div>
-      <div class="mini one"><strong>Tonight’s story</strong><span>Luna and the Sleepy Moon Dragon</span></div>
-      <div class="mini two"><strong>Parent approved ✓</strong><span>Nothing plays until you say yes.</span></div>
-    </div>
+  <div class="stage reveal">
+    <div class="moon"></div>
+    <div class="phone"><img src="assets/img/dreamtale-app-splash-screen.webp" alt="DreamTale app" loading="eager"></div>
+
+    <!-- Floating hero info cards temporarily hidden.
+        Restore by uncommenting these two lines.
+    <div class="mini one"><strong>Tonight’s story</strong><span>Luna and the Sleepy Moon Dragon</span></div>
+    <div class="mini two"><strong>Parent approved ✓</strong><span>Nothing plays until you say yes.</span></div>
+    -->
+</div>
   </section>
 
   <div class="orn" aria-hidden="true"><span>✦</span><span>✦</span><span>✦</span></div>
@@ -546,7 +550,6 @@ const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matc
   });
 })();
 
-/* ---------- waitlist form ---------- */
 /* ---------- waitlist form ---------- */
 (function waitlist(){
   const form = document.getElementById('waitlistForm');
