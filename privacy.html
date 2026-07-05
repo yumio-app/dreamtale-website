@@ -189,6 +189,19 @@
 
   .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease, transform .7s ease}
   .reveal.show{opacity:1;transform:none}
+
+  /* full policy prose */
+  .policy{scroll-margin-top:84px}
+  .policy h2{margin-bottom:8px}
+  .policy h3{margin:34px 0 10px;color:var(--gold);font-size:1.05rem}
+  .policy p{margin:0 0 14px;font-size:.97rem}
+  .policy ul{margin:0 0 16px;list-style:none}
+  .policy li{padding:5px 0 5px 24px;position:relative;color:var(--muted);font-size:.95rem}
+  .policy li::before{content:"✦";position:absolute;left:2px;top:9px;color:var(--gold);font-size:.65rem}
+  .policy li strong{color:var(--text)}
+  .policy a{color:var(--lav);text-decoration:underline;text-underline-offset:3px}
+  .policy a:hover{color:var(--gold)}
+  .pol-cta{margin:-16px 0 40px}
 </style>
 </head>
 <body>
@@ -199,18 +212,85 @@
 <main class="wrap" style="max-width:760px;padding-top:56px;padding-bottom:88px">
   <p class="kicker">Legal</p>
   <h1 style="font-size:2.2rem">Privacy Policy</h1>
-  <p style="margin:12px 0 36px;color:var(--muted)">Last updated: July 2026 · <strong style="color:var(--gold)">Placeholder — attorney review required before launch.</strong></p>
+  <p style="margin:12px 0 24px;color:var(--muted)">Last updated: July 4, 2026</p>
+  <p class="pol-cta"><a class="btn btn-ghost" href="#full-privacy-policy">Read the full Privacy Policy ↓</a></p>
+  <p class="kicker" style="margin-bottom:14px">The short version</p>
   <div class="card" style="margin-bottom:16px"><h3>What we collect</h3><p style="margin-top:8px">A parent email for the account, child nicknames and age ranges (never full names or birthdates), story preferences, and the stories your family creates.</p></div>
 <div class="card" style="margin-bottom:16px"><h3>Your child’s voice</h3><p style="margin-top:8px">Voice recordings are used only to capture a story idea as text. By default, audio is deleted immediately after transcription — only the text idea is kept.</p></div>
 <div class="card" style="margin-bottom:16px"><h3>No ads, no selling data</h3><p style="margin-top:8px">DreamTale does not show ads, does not sell personal data, and does not build advertising profiles of children.</p></div>
 <div class="card" style="margin-bottom:16px"><h3>Parent control</h3><p style="margin-top:8px">Parents can export all data or delete everything at any time from the app’s Settings. Deleting your account removes profiles, preferences, and stories.</p></div>
 <div class="card" style="margin-bottom:16px"><h3>AI processing</h3><p style="margin-top:8px">Story generation runs on secure servers. Child inputs are used only to create the requested story and are never used to train models.</p></div>
-<div class="card" style="margin-bottom:16px"><h3>Children’s privacy (COPPA / GDPR-K)</h3><p style="margin-top:8px">DreamTale is a parent-directed service. Accounts belong to parents; children cannot create accounts, share content publicly, or chat with anyone.</p></div>
+<div class="card" style="margin-bottom:16px"><h3>Children’s privacy</h3><p style="margin-top:8px">DreamTale is a parent-directed service. Accounts belong to parents; children cannot create accounts, share content publicly, or chat with anyone.</p></div>
 <div class="card" style="margin-bottom:16px"><h3>Contact</h3><p style="margin-top:8px">Questions about privacy? Email hello@dreamtale.app.</p></div>
+
+  <section id="full-privacy-policy" class="policy" style="padding:64px 0 0">
+    <p class="kicker">The full policy</p>
+    <h2>Full Privacy Policy</h2>
+    <p style="margin:14px 0 30px">This policy explains how DreamTale (“we,” “us,” “our”) handles information for our website and waitlist today, and for the DreamTale app when it launches. DreamTale is built to be parent-controlled: accounts belong to parents, there is no open chatbot for children, and parents decide what plays.</p>
+
+    <h3>1. Information we collect</h3>
+    <p>On this website:</p>
+    <ul>
+      <li><strong>Waitlist signups.</strong> Your email address and a tag for where you signed up (for example, “app-waitlist”).</li>
+      <li><strong>Basic technical data.</strong> Standard web logs and hosting analytics, such as approximate region, browser type, and pages visited, used to keep the site working and understand overall interest.</li>
+    </ul>
+    <p>In the app, once it launches:</p>
+    <ul>
+      <li><strong>Parent account information.</strong> The email and sign-in details a parent uses to create and secure the family account.</li>
+      <li><strong>Child profile information entered by parents.</strong> A nickname, an age range, and story preferences such as favorite animals, story moods, and topics to avoid. We encourage nicknames rather than full names.</li>
+      <li><strong>Story ideas and prompts.</strong> The ideas your family shares to create a story, whether typed, tapped, or spoken.</li>
+      <li><strong>Voice idea recordings.</strong> If your child speaks a story idea, the audio is processed to turn that idea into text. DreamTale is designed to use the recording only for this purpose and not to keep audio longer than needed — the text idea is what’s saved. Where the app offers audio storage settings, parents control them.</li>
+      <li><strong>Generated stories.</strong> The stories, artwork, and narration created for your family and saved to your library.</li>
+      <li><strong>Device and usage data.</strong> App diagnostics such as crashes, performance, and which features are used, so we can fix problems and improve DreamTale.</li>
+    </ul>
+
+    <h3>2. How we use information</h3>
+    <ul>
+      <li>To create, narrate, and save the stories your family asks for.</li>
+      <li>To personalize stories to each child profile a parent sets up.</li>
+      <li>To run the waitlist and send launch updates and early-access invitations.</li>
+      <li>To keep DreamTale safe, including enforcing content guardrails and our terms.</li>
+      <li>To operate, debug, and improve the app and website.</li>
+    </ul>
+    <p>We do not show ads, we do not sell personal data, and we do not build advertising profiles of children.</p>
+
+    <h3>3. AI processing and service providers</h3>
+    <p>Stories are generated with the help of AI services running on secure infrastructure. When a story is created, we send only what is needed to generate it — such as the story idea and the preferences a parent chose. Service providers that help us run DreamTale (for example, hosting, email delivery, and AI generation) process information on our behalf and are not permitted to use it for their own advertising. We do not use your family’s stories or your child’s inputs to train AI models.</p>
+
+    <h3>4. Email communications</h3>
+    <p>If you join the waitlist, we’ll email you DreamTale updates and early-access news. Every email includes a way to unsubscribe, and you can always ask us to remove you at hello@dreamtale.app.</p>
+
+    <h3>5. Data retention</h3>
+    <p>We keep waitlist emails until launch outreach is complete or you ask us to delete yours, whichever comes first. Account and story data is kept while your account is active. When a parent deletes the account, profiles, preferences, and stories are removed from our active systems, and residual copies in backups are purged on a routine schedule.</p>
+
+    <h3>6. Children’s privacy and parent control</h3>
+    <p>DreamTale is a parent-directed service, and we design it with children’s privacy and parent control in mind. Accounts belong to parents. Children cannot create accounts, share content publicly, or chat with anyone — DreamTale is a guided story flow, not an open chatbot. Parents preview and approve stories before they play, set per-child limits, and can edit or delete a child’s profile at any time.</p>
+
+    <h3>7. Security</h3>
+    <p>We use reasonable technical and organizational safeguards to protect information, including encryption in transit and restricted access to our systems. No method of transmission or storage is completely secure, but protecting your family’s information is a core design goal of DreamTale.</p>
+
+    <h3>8. Your choices</h3>
+    <ul>
+      <li><strong>Unsubscribe</strong> from emails using the link in any message.</li>
+      <li><strong>Access or export</strong> your family’s data from the app’s Settings once the app launches.</li>
+      <li><strong>Correct</strong> profile details at any time in the app.</li>
+      <li><strong>Delete</strong> your data — from the app’s Settings, or by emailing hello@dreamtale.app.</li>
+    </ul>
+    <p>We honor requests as required by applicable law.</p>
+
+    <h3>9. Changes to this policy</h3>
+    <p>If we change this policy, we’ll update the date at the top of this page. For material changes after the app launches, we’ll also notify you by email or in-app notice.</p>
+
+    <h3>10. Contact</h3>
+    <p>Questions about privacy? Email <a href="mailto:hello@dreamtale.app">hello@dreamtale.app</a>.</p>
+  </section>
 </main>
 <footer>
   <a class="brand" href="index.html" style="font-size:1.05rem"><img src="assets/img/logo.webp" alt=""><span>DreamTale</span></a>
   <div class="links"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="mailto:hello@dreamtale.app">Contact</a></div>
 </footer>
+<script>
+addEventListener('load', () => { if (location.hash) { const t = document.querySelector(location.hash); if (t) t.scrollIntoView(); } });
+</script>
 </body>
 </html>
