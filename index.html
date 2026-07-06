@@ -127,7 +127,7 @@
   .hero .lead{font-size:clamp(1.05rem,1.6vw,1.25rem);margin:26px 0 38px;max-width:430px;color:var(--lav)}
   .hero-actions{display:flex;gap:14px;flex-wrap:wrap}
   .hero.wrap>*{min-width:0}
-  .proof{margin-top:46px;max-width:100%}
+  .proof{margin-top:46px;max-width:100%;position:relative;z-index:3}
   .proof-track{display:flex}
   .proof-set{display:flex;gap:10px;flex-wrap:wrap}
   .proof-set[aria-hidden]{display:none}
@@ -352,7 +352,7 @@
   /* policy modal */
   #policyModal{inset:0;margin:auto;border:1px solid var(--border-hot);border-radius:26px;padding:0;color:var(--text);
     background:linear-gradient(180deg,#1D2460,#141A4A);
-    width:min(720px,calc(100vw - 28px));max-height:min(84vh,780px);
+    width:min(720px,calc(100vw - 28px));height:80vh;max-height:780px;
     box-shadow:0 40px 120px rgba(0,0,0,.6), 0 0 90px rgba(122,90,248,.28)}
   #policyModal[open]{display:flex;flex-direction:column}
   #policyModal::backdrop{background:rgba(6,9,32,.72);backdrop-filter:blur(6px)}
@@ -369,7 +369,7 @@
     display:flex;justify-content:flex-end;flex:none;border-radius:0 0 25px 25px}
   .modal-ok{padding:12px 36px;animation:none}
   @media(max-width:520px){
-    #policyModal{width:calc(100vw - 16px);max-height:88vh}
+    #policyModal{width:calc(100vw - 16px);height:80vh;max-height:88vh}
     .modal-head,.modal-body,.modal-foot{padding-left:18px;padding-right:18px}
   }
 
@@ -397,6 +397,8 @@
   @media(max-width:520px){
     section.wrap{padding:44px 20px}
     .hero.wrap{padding:48px 24px 32px}
+    .hero-actions{flex-wrap:nowrap;gap:10px;}
+    .hero-actions .btn{padding:13px 18px;font-size:.88rem;white-space:nowrap;}
     #how .grid3,.gallery{margin:0 -20px;padding-left:20px;padding-right:20px}
     header{padding:12px 16px}
     .brand{font-size:1.08rem}
@@ -518,9 +520,6 @@
       <figure class="shot"><img src="assets/img/reader-screen.webp" alt="Reader" loading="lazy"><figcaption>Reader</figcaption></figure>
     </div>
     <div class="snap-bar" aria-hidden="true"><i></i></div>
-    <div class="band reveal" data-stagger style="margin-top:64px">
-      <span>📝 Planned</span><span>🪶 Gently written</span><span>✅ Safety-checked</span><span>🎙️ Softly narrated</span>
-    </div>
   </section>
 
   <div class="orn" aria-hidden="true"><span>✦</span><span>✦</span><span>✦</span></div>
@@ -537,6 +536,8 @@
         <div><strong>💬 No open chat</strong><p>A guided flow, never a chatbot.</p></div>
         <div><strong>🎙️ Voice privacy</strong><p>Audio deleted after the idea.</p></div>
         <div><strong>🚫 Your limits</strong><p>Block scary things, per child.</p></div>
+        <div><strong>🪶 Gently written</strong><p>Calm stories made for bedtime.</p></div>
+        <div><strong>🎙️ Softly narrated</strong><p>A soothing voice for every story.</p></div>
       </div>
     </div>
   </section>
@@ -574,8 +575,8 @@
   <!-- FAQ -->
   <section id="faq" class="wrap">
     <div class="section-head reveal">
-      <p class="kicker">Questions, answered</p>
-      <h2>Everything parents <span class="shimmer">ask us</span>.</h2>
+      <p class="kicker">Everything parents ask us</p>
+      <h2>Your questions, <span class="shimmer">answered</span>.</h2>
     </div>
     <div class="faq reveal" data-stagger>
       <details>
