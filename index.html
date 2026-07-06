@@ -234,12 +234,12 @@
 
   /* safety */
   .safety-card{
-    display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;
+    display:grid;grid-template-columns:.9fr 1.1fr;gap:72px;align-items:center;
     background:linear-gradient(135deg, rgba(35,42,96,.7), rgba(58,42,110,.5));
     border:1px solid var(--border-hot);border-radius:36px;padding:clamp(38px,5vw,64px);
     box-shadow:0 0 80px rgba(122,90,248,.15);
   }
-  .safety-points{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+  .safety-points{display:grid;grid-template-columns:1fr 1fr;column-gap:26px;row-gap:26px}
   .safety-points strong{color:var(--gold);display:block;margin-bottom:5px;font-size:1rem}
   .safety-points p{font-size:.88rem}
   @media(max-width:900px){.safety-card{grid-template-columns:1fr}}
@@ -338,24 +338,34 @@
   .form-msg.ok{color:#9FE3B4}.form-msg.err{color:#F2A4A4}
 
  /* footer and legal byline */
-  footer{
+
+ footer{
   border-top:1px solid var(--border);
-  padding:40px 24px 28px;
+  padding:36px 24px 22px;
   color:var(--faint);
   font-size:.88rem;
 }
 
 .footer-main{
-  display:flex;
-  flex-wrap:wrap;
-  gap:18px;
+  display:grid;
+  grid-template-columns:1fr auto 1fr;
   align-items:center;
-  justify-content:space-between;
+  gap:18px;
 }
 
-footer .links{
+.footer-main .brand{
+  justify-self:start;
+}
+
+.footer-tagline{
+  justify-self:center;
+  text-align:center;
+}
+
+.footer-main .links{
   display:flex;
   gap:22px;
+  justify-self:end;
 }
 
 footer a:hover{
@@ -367,10 +377,8 @@ footer a:hover{
   text-align:center;
   color:var(--faint);
   font-size:.72rem;
-  opacity:.6;
-  margin-top:24px;
-  padding-top:18px;
-  border-top:1px solid rgba(201,198,242,.08);
+  opacity:.55;
+  margin-top:14px;
 }
 
   /* magical reveal: rise + de-blur */
@@ -438,6 +446,7 @@ footer a:hover{
     .faq .faq-a{padding:0 18px 18px}
     .scene .castle{width:96px;left:-16px;opacity:.6}
     .scene .sp{display:none}
+    .safety-card{gap:34px;}
   }
   @media(max-width:400px){
     .scene .castle{display:none}
@@ -720,7 +729,7 @@ footer a:hover{
 <footer>
   <div class="footer-main">
     <a class="brand" href="#top" style="font-size:1.05rem"><img src="assets/img/logo.webp" alt=""><span>DreamTale</span></a>
-    <span>Bedtime stories your child helps create.</span>
+    <span class="footer-tagline">Bedtime stories your child helps create.</span>
     <div class="links">
       <a href="privacy.html">Privacy</a>
       <a href="terms.html">Terms</a>
