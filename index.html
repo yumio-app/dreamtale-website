@@ -337,12 +337,41 @@
   .form-msg{margin-top:18px;font-size:.9rem;min-height:1.4em;position:relative}
   .form-msg.ok{color:#9FE3B4}.form-msg.err{color:#F2A4A4}
 
+ /* footer and legal byline */
   footer{
-    border-top:1px solid var(--border);padding:40px 24px 28px;display:flex;flex-wrap:wrap;gap:18px;
-    align-items:center;justify-content:space-between;color:var(--faint);font-size:.88rem;
-  }
-  footer .links{display:flex;gap:22px}
-  footer a:hover{color:var(--lav)}
+  border-top:1px solid var(--border);
+  padding:40px 24px 28px;
+  color:var(--faint);
+  font-size:.88rem;
+}
+
+.footer-main{
+  display:flex;
+  flex-wrap:wrap;
+  gap:18px;
+  align-items:center;
+  justify-content:space-between;
+}
+
+footer .links{
+  display:flex;
+  gap:22px;
+}
+
+footer a:hover{
+  color:var(--lav);
+}
+
+.byline{
+  width:100%;
+  text-align:center;
+  color:var(--faint);
+  font-size:.72rem;
+  opacity:.6;
+  margin-top:24px;
+  padding-top:18px;
+  border-top:1px solid rgba(201,198,242,.08);
+}
 
   /* magical reveal: rise + de-blur */
   .reveal{opacity:0;transform:translateY(38px) scale(.985);filter:blur(7px);
@@ -382,9 +411,6 @@
   .policy li strong{color:var(--text)}
   .policy a{color:var(--lav);text-decoration:underline;text-underline-offset:3px}
   .policy a:hover{color:var(--gold)}
-
-  /* legal byline */
-  .byline{width:100%;text-align:center;color:var(--faint);font-size:.72rem;opacity:.7;margin-top:18px;}
 
   /* small screens */
   @media(max-width:900px){
@@ -692,12 +718,14 @@
 </main>
 
 <footer>
-  <a class="brand" href="#top" style="font-size:1.05rem"><img src="assets/img/logo.webp" alt=""><span>DreamTale</span></a>
-  <span>Bedtime stories your child helps create.</span>
-  <div class="links">
-    <a href="privacy.html">Privacy</a>
-    <a href="terms.html">Terms</a>
-    <a href="mailto:hello@dreamtale.app">Contact</a>
+  <div class="footer-main">
+    <a class="brand" href="#top" style="font-size:1.05rem"><img src="assets/img/logo.webp" alt=""><span>DreamTale</span></a>
+    <span>Bedtime stories your child helps create.</span>
+    <div class="links">
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="mailto:hello@dreamtale.app">Contact</a>
+    </div>
   </div>
   <p class="byline">© 2026 DreamTale. Operated by Snackish Holdings LLC.</p>
 </footer>
