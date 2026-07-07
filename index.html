@@ -255,6 +255,38 @@
   .price-card ul{list-style:none}
   .price-card li{padding:8px 0;color:var(--muted);font-size:.95rem}
   .price-card li::before{content:"✓  ";color:var(--gold)}
+
+  /* pricing ambient scenes */
+  /* --- ambient scene: absolute, adds no height, fades into card on the left --- */
+    .pscene-wrap{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden;border-radius:26px}
+    .pscene{position:absolute;right:0;bottom:0;width:100%;height:100%;
+      -webkit-mask-image:linear-gradient(90deg,transparent 30%,#000 66%);
+      mask-image:linear-gradient(90deg,transparent 30%,#000 66%)}
+    .pc-content{position:relative;z-index:1}
+  
+    @keyframes dtFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+    @keyframes dtFloat2{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-8px) rotate(-2deg)}}
+    @keyframes dtTw{0%,100%{opacity:.25}50%{opacity:1}}
+    @keyframes dtGlow{0%,100%{opacity:.2}50%{opacity:.4}}
+    @keyframes dtWing{0%,100%{transform:rotate(0)}50%{transform:rotate(-10deg)}}
+    @keyframes dtTrail{to{stroke-dashoffset:-20}}
+    @keyframes dtFw{0%,100%{opacity:.2;transform:scale(.7)}50%{opacity:1;transform:scale(1)}}
+    @keyframes dtCloud{0%,100%{transform:translateX(0)}50%{transform:translateX(10px)}}
+    @keyframes dtCloud2{0%,100%{transform:translateX(0)}50%{transform:translateX(-8px)}}
+    .dt-float{animation:dtFloat 5s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+    .dt-float2{animation:dtFloat2 6.5s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+    .dt-tw{animation:dtTw 3.6s ease-in-out infinite}
+    .dt-tw.d1{animation-delay:1.2s}.dt-tw.d2{animation-delay:2.2s}
+    .dt-tabglow{animation:dtGlow 4s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+    .dt-wing{animation:dtWing 2.6s ease-in-out infinite;transform-box:fill-box;transform-origin:5% 40%}
+    .dt-wing2{animation:dtWing 2.6s ease-in-out infinite;transform-box:fill-box;transform-origin:90% 90%;animation-delay:.15s}
+    .dt-trail{animation:dtTrail 1.5s linear infinite}
+    .dt-cloud{animation:dtCloud 11s ease-in-out infinite}
+    .dt-cloud.d1{animation:dtCloud2 13s ease-in-out infinite}
+    .dt-cloud.d2{animation:dtCloud 15s ease-in-out infinite;animation-delay:2s}
+    .dt-fw{animation:dtFw 2.6s ease-in-out infinite;transform-box:fill-box;transform-origin:250px 70px}
+    .dt-fw.d1{animation-delay:.9s;transform-origin:245px 110px}
+  @media(prefers-reduced-motion:reduce){*{animation:none!important}.dt-tabglow{opacity:.3}.dt-fw{opacity:.8}}
   .badge{
     position:absolute;top:-13px;left:50%;transform:translateX(-50%);
     background:linear-gradient(135deg,var(--gold),var(--gold-deep));color:var(--gold-ink);
@@ -386,7 +418,7 @@ footer a:hover{
 }
 @media(max-width:520px){
   footer {padding:34px 24px 24px;}
-
+  
   .footer-main{
     grid-template-columns:1fr;
     justify-items:center;
@@ -622,20 +654,104 @@ footer a:hover{
     </div>
     <div class="grid3 reveal" data-stagger>
       <article class="card price-card">
-        <h3>Plus</h3>
-        <p class="price">$9.99<span>/mo</span></p>
-        <ul><li>30 Bedtime Minis</li><li>3 Premium Storybooks</li><li>Unlimited replays</li></ul>
+        <div class="pscene-wrap"><svg class="pscene" viewBox="0 0 338 301" preserveAspectRatio="xMaxYMax slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><g class="dt-moon">
+      <circle cx="276" cy="62" r="34" fill="#F2C879" opacity=".14"/>
+      <circle cx="276" cy="62" r="23" fill="#F2C879" opacity=".12"/>
+      <path fill="#FFE9B8" d="M278 32 a20 20 0 1 0 18 28 a14 14 0 1 1 -18 -28 Z"/>
+      <path fill="#F2C879" opacity=".55" d="M281 36 a16 16 0 1 0 14 23 a11 11 0 1 1 -14 -23 Z"/>
+    </g><circle class="dt-tw" cx="214" cy="40" r="1.5" fill="#F2C879"/><circle class="dt-tw d1" cx="250" cy="30" r="1.3" fill="#F2C879"/><circle class="dt-tw d2" cx="300" cy="64" r="1.5" fill="#F2C879"/><circle class="dt-tw" cx="322" cy="110" r="1.4" fill="#F2C879"/><circle class="dt-tw d1" cx="270" cy="150" r="1.2" fill="#F2C879"/><circle class="dt-tw d2" cx="232" cy="86" r="1.3" fill="#F2C879"/><circle class="dt-tw" cx="312" cy="44" r="1.2" fill="#F2C879"/><circle class="dt-tw d1" cx="292" cy="128" r="1.4" fill="#F2C879"/><circle class="dt-tw d2" cx="248" cy="120" r="1.1" fill="#F2C879"/><circle class="dt-tw" cx="244" cy="222" r="1.4" fill="#F2C879"/><circle class="dt-tw d1" cx="266" cy="250" r="1.5" fill="#F2C879"/><circle class="dt-tw d2" cx="300" cy="232" r="1.3" fill="#F2C879"/><circle class="dt-tw" cx="250" cy="272" r="1.2" fill="#F2C879"/><circle class="dt-tw d1" cx="284" cy="278" r="1.4" fill="#F2C879"/><circle class="dt-tw d2" cx="238" cy="246" r="1.2" fill="#F2C879"/><circle class="dt-tw" cx="320" cy="262" r="1.3" fill="#F2C879"/><circle class="dt-tw d1" cx="258" cy="214" r="1.1" fill="#F2C879"/><circle class="dt-tw d2" cx="276" cy="206" r="1.3" fill="#F2C879"/><circle class="dt-tw" cx="300" cy="214" r="1.2" fill="#F2C879"/><circle class="dt-tw d1" cx="312" cy="196" r="1.2" fill="#F2C879"/><g class="dt-cloud" style="transform-origin:250px 238px"><path transform="translate(250 238) scale(1.15)" fill="#3A3480" opacity=".55"
+      d="M0 8 q1 -9 11 -9 q4 -7 13 -5 q7 -1 10 5 q9 0 9 7 q0 6 -8 6 l-36 0 q-7 0 -7 -6 q0 -5 8 -4 Z"/></g><g class="dt-cloud d1" style="transform-origin:300px 150px"><path transform="translate(300 150) scale(0.8)" fill="#4A428F" opacity=".4"
+      d="M0 8 q1 -9 11 -9 q4 -7 13 -5 q7 -1 10 5 q9 0 9 7 q0 6 -8 6 l-36 0 q-7 0 -7 -6 q0 -5 8 -4 Z"/></g><path class="dt-tw" transform="translate(236 60) scale(1.25)" fill="#FFF3D6" d="M0 -4 L1 -1 4 0 1 1 0 4 -1 1 -4 0 -1 -1 Z"/><path class="dt-tw d1" transform="translate(300 150) scale(1.00)" fill="#FFF3D6" d="M0 -4 L1 -1 4 0 1 1 0 4 -1 1 -4 0 -1 -1 Z"/><path class="dt-tw d2" transform="translate(246 116) scale(1.00)" fill="#FFF3D6" d="M0 -4 L1 -1 4 0 1 1 0 4 -1 1 -4 0 -1 -1 Z"/><circle class="dt-tw" cx="300" cy="64" r="1.6" fill="#F2C879"/><circle class="dt-tw d1" cx="320" cy="92" r="1.4" fill="#F2C879"/><circle class="dt-tw d2" cx="268" cy="88" r="1.3" fill="#F2C879"/><circle class="dt-tw" cx="332" cy="132" r="1.5" fill="#F2C879"/><circle class="dt-tw d1" cx="246" cy="138" r="1.2" fill="#F2C879"/><circle class="dt-tw d2" cx="312" cy="170" r="1.4" fill="#F2C879"/><circle class="dt-tw" cx="290" cy="200" r="1.3" fill="#F2C879"/><circle class="dt-tw d1" cx="262" cy="168" r="1.2" fill="#F2C879"/><circle class="dt-tw d2" cx="226" cy="150" r="1.3" fill="#F2C879"/><circle class="dt-tw" cx="340" cy="58" r="1.3" fill="#F2C879"/><circle class="dt-tw d1" cx="292" cy="120" r="1.6" fill="#F2C879"/><circle class="dt-tw d2" cx="316" cy="120" r="1.4" fill="#F2C879"/><circle class="dt-tw" cx="276" cy="150" r="1.5" fill="#F2C879"/><circle class="dt-tw d1" cx="300" cy="232" r="1.3" fill="#F2C879"/><circle class="dt-tw d2" cx="324" cy="210" r="1.4" fill="#F2C879"/><circle class="dt-tw" cx="250" cy="214" r="1.3" fill="#F2C879"/><circle class="dt-tw d1" cx="286" cy="252" r="1.4" fill="#F2C879"/><circle class="dt-tw d2" cx="318" cy="262" r="1.3" fill="#F2C879"/><circle class="dt-tw" cx="270" cy="120" r="1.3" fill="#F2C879"/><circle class="dt-tw d1" cx="340" cy="150" r="1.4" fill="#F2C879"/><path class="dt-tw" transform="translate(300 110) scale(1.00)" fill="#FFF3D6" d="M0 -4 L1 -1 4 0 1 1 0 4 -1 1 -4 0 -1 -1 Z"/><path class="dt-tw d1" transform="translate(320 180) scale(0.85)" fill="#FFF3D6" d="M0 -4 L1 -1 4 0 1 1 0 4 -1 1 -4 0 -1 -1 Z"/><path class="dt-tw" transform="translate(268 130) scale(0.80)" fill="#FFF3D6" d="M0 -4 L1 -1 4 0 1 1 0 4 -1 1 -4 0 -1 -1 Z"/><g class="dt-cloud d2" style="transform-origin:300px 196px"><path transform="translate(300 196) scale(1.0)" fill="#4A428F" opacity=".4"
+      d="M0 8 q1 -9 11 -9 q4 -7 13 -5 q7 -1 10 5 q9 0 9 7 q0 6 -8 6 l-36 0 q-7 0 -7 -6 q0 -5 8 -4 Z"/></g><g class="dt-cloud" style="transform-origin:258px 150px"><path transform="translate(258 150) scale(0.85)" fill="#3A3480" opacity=".5"
+      d="M0 8 q1 -9 11 -9 q4 -7 13 -5 q7 -1 10 5 q9 0 9 7 q0 6 -8 6 l-36 0 q-7 0 -7 -6 q0 -5 8 -4 Z"/></g><g class="dt-cloud d1" style="transform-origin:322px 132px"><path transform="translate(322 132) scale(0.9)" fill="#4A428F" opacity=".42"
+      d="M0 8 q1 -9 11 -9 q4 -7 13 -5 q7 -1 10 5 q9 0 9 7 q0 6 -8 6 l-36 0 q-7 0 -7 -6 q0 -5 8 -4 Z"/></g><g class="dt-cloud" style="transform-origin:278px 262px"><path transform="translate(278 262) scale(1.05)" fill="#3A3480" opacity=".5"
+      d="M0 8 q1 -9 11 -9 q4 -7 13 -5 q7 -1 10 5 q9 0 9 7 q0 6 -8 6 l-36 0 q-7 0 -7 -6 q0 -5 8 -4 Z"/></g><g class="dt-cloud d2" style="transform-origin:238px 196px"><path transform="translate(238 196) scale(0.75)" fill="#4A428F" opacity=".33"
+      d="M0 8 q1 -9 11 -9 q4 -7 13 -5 q7 -1 10 5 q9 0 9 7 q0 6 -8 6 l-36 0 q-7 0 -7 -6 q0 -5 8 -4 Z"/></g></svg></div>
+        <div class="pc-content">
+          <h3>Plus</h3>
+          <p class="price">$9.99<span>/mo</span></p>
+          <ul><li>30 Bedtime Minis</li><li>3 Premium Storybooks</li><li>Unlimited replays</li></ul>
+        </div>
       </article>
       <article class="card price-card featured">
         <span class="badge">Best for families</span>
-        <h3>Family</h3>
-        <p class="price">$14.99<span>/mo</span></p>
-        <ul><li>30 Bedtime Minis</li><li>5 Premium Storybooks</li><li>Multiple child profiles</li></ul>
+        <div class="pscene-wrap"><svg class="pscene" viewBox="0 0 338 301" preserveAspectRatio="xMaxYMax slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><g class="dt-moon">
+      <circle cx="276" cy="62" r="34" fill="#F2C879" opacity=".14"/>
+      <circle cx="276" cy="62" r="23" fill="#F2C879" opacity=".12"/>
+      <path fill="#FFE9B8" d="M278 32 a20 20 0 1 0 18 28 a14 14 0 1 1 -18 -28 Z"/>
+      <path fill="#F2C879" opacity=".55" d="M281 36 a16 16 0 1 0 14 23 a11 11 0 1 1 -14 -23 Z"/>
+    </g><circle class="dt-tw" cx="214" cy="40" r="1.5" fill="#F2C879"/><circle class="dt-tw d1" cx="250" cy="30" r="1.3" fill="#F2C879"/><circle class="dt-tw d2" cx="300" cy="64" r="1.5" fill="#F2C879"/><circle class="dt-tw" cx="322" cy="110" r="1.4" fill="#F2C879"/><circle class="dt-tw d1" cx="270" cy="150" r="1.2" fill="#F2C879"/><circle class="dt-tw d2" cx="232" cy="86" r="1.3" fill="#F2C879"/><circle class="dt-tw" cx="312" cy="44" r="1.2" fill="#F2C879"/><circle class="dt-tw d1" cx="292" cy="128" r="1.4" fill="#F2C879"/><circle class="dt-tw d2" cx="248" cy="120" r="1.1" fill="#F2C879"/><circle class="dt-tw" cx="244" cy="222" r="1.4" fill="#F2C879"/><circle class="dt-tw d1" cx="266" cy="250" r="1.5" fill="#F2C879"/><circle class="dt-tw d2" cx="300" cy="232" r="1.3" fill="#F2C879"/><circle class="dt-tw" cx="250" cy="272" r="1.2" fill="#F2C879"/><circle class="dt-tw d1" cx="284" cy="278" r="1.4" fill="#F2C879"/><circle class="dt-tw d2" cx="238" cy="246" r="1.2" fill="#F2C879"/><circle class="dt-tw" cx="320" cy="262" r="1.3" fill="#F2C879"/><circle class="dt-tw d1" cx="258" cy="214" r="1.1" fill="#F2C879"/><circle class="dt-tw d2" cx="276" cy="206" r="1.3" fill="#F2C879"/><circle class="dt-tw" cx="300" cy="214" r="1.2" fill="#F2C879"/><circle class="dt-tw d1" cx="312" cy="196" r="1.2" fill="#F2C879"/><g class="dt-cloud" style="transform-origin:250px 238px"><path transform="translate(250 238) scale(1.15)" fill="#3A3480" opacity=".55"
+      d="M0 8 q1 -9 11 -9 q4 -7 13 -5 q7 -1 10 5 q9 0 9 7 q0 6 -8 6 l-36 0 q-7 0 -7 -6 q0 -5 8 -4 Z"/></g><g class="dt-cloud d1" style="transform-origin:300px 150px"><path transform="translate(300 150) scale(0.8)" fill="#4A428F" opacity=".4"
+      d="M0 8 q1 -9 11 -9 q4 -7 13 -5 q7 -1 10 5 q9 0 9 7 q0 6 -8 6 l-36 0 q-7 0 -7 -6 q0 -5 8 -4 Z"/></g><g class="dt-cloud d2" style="transform-origin:232px 120px"><path transform="translate(232 120) scale(0.7)" fill="#4A428F" opacity=".35"
+      d="M0 8 q1 -9 11 -9 q4 -7 13 -5 q7 -1 10 5 q9 0 9 7 q0 6 -8 6 l-36 0 q-7 0 -7 -6 q0 -5 8 -4 Z"/></g><path class="dt-tw" transform="translate(236 60) scale(1.25)" fill="#FFF3D6" d="M0 -4 L1 -1 4 0 1 1 0 4 -1 1 -4 0 -1 -1 Z"/><path class="dt-tw d1" transform="translate(300 150) scale(1.00)" fill="#FFF3D6" d="M0 -4 L1 -1 4 0 1 1 0 4 -1 1 -4 0 -1 -1 Z"/><path class="dt-tw d2" transform="translate(246 116) scale(1.00)" fill="#FFF3D6" d="M0 -4 L1 -1 4 0 1 1 0 4 -1 1 -4 0 -1 -1 Z"/><circle class="dt-tw" cx="300" cy="64" r="1.6" fill="#F2C879"/><circle class="dt-tw d1" cx="320" cy="92" r="1.4" fill="#F2C879"/><circle class="dt-tw d2" cx="268" cy="88" r="1.3" fill="#F2C879"/><circle class="dt-tw" cx="332" cy="132" r="1.5" fill="#F2C879"/><circle class="dt-tw d1" cx="246" cy="138" r="1.2" fill="#F2C879"/><circle class="dt-tw d2" cx="312" cy="170" r="1.4" fill="#F2C879"/><circle class="dt-tw" cx="290" cy="200" r="1.3" fill="#F2C879"/><circle class="dt-tw d1" cx="262" cy="168" r="1.2" fill="#F2C879"/><circle class="dt-tw d2" cx="226" cy="150" r="1.3" fill="#F2C879"/><circle class="dt-tw" cx="340" cy="58" r="1.3" fill="#F2C879"/><circle class="dt-tw d1" cx="324" cy="150" r="1.5" fill="#F2C879"/><circle class="dt-tw d2" cx="342" cy="116" r="1.3" fill="#F2C879"/><circle class="dt-tw" cx="300" cy="120" r="1.4" fill="#F2C879"/><circle class="dt-tw d1" cx="330" cy="240" r="1.3" fill="#F2C879"/><circle class="dt-tw d2" cx="288" cy="238" r="1.3" fill="#F2C879"/><path class="dt-tw" transform="translate(300 110) scale(1.00)" fill="#FFF3D6" d="M0 -4 L1 -1 4 0 1 1 0 4 -1 1 -4 0 -1 -1 Z"/><path class="dt-tw d1" transform="translate(320 180) scale(0.85)" fill="#FFF3D6" d="M0 -4 L1 -1 4 0 1 1 0 4 -1 1 -4 0 -1 -1 Z"/><path class="dt-tw" transform="translate(268 130) scale(0.80)" fill="#FFF3D6" d="M0 -4 L1 -1 4 0 1 1 0 4 -1 1 -4 0 -1 -1 Z"/><g class="dt-cloud d2" style="transform-origin:300px 196px"><path transform="translate(300 196) scale(1.0)" fill="#4A428F" opacity=".4"
+      d="M0 8 q1 -9 11 -9 q4 -7 13 -5 q7 -1 10 5 q9 0 9 7 q0 6 -8 6 l-36 0 q-7 0 -7 -6 q0 -5 8 -4 Z"/></g><g class="dt-cloud" style="transform-origin:258px 150px"><path transform="translate(258 150) scale(0.85)" fill="#3A3480" opacity=".5"
+      d="M0 8 q1 -9 11 -9 q4 -7 13 -5 q7 -1 10 5 q9 0 9 7 q0 6 -8 6 l-36 0 q-7 0 -7 -6 q0 -5 8 -4 Z"/></g><g class="dt-cloud d1" style="transform-origin:316px 236px"><path transform="translate(316 236) scale(0.8)" fill="#4A428F" opacity=".38"
+      d="M0 8 q1 -9 11 -9 q4 -7 13 -5 q7 -1 10 5 q9 0 9 7 q0 6 -8 6 l-36 0 q-7 0 -7 -6 q0 -5 8 -4 Z"/></g><g class="dt-fox">
+      <g class="dt-float">
+        <path d="M296 176 q22 1 30 -13 q13 -19 38 -16 q-15 8 -18 25 q-3 18 -27 20 q-18 1 -23 -8 Z" fill="#F2C879" opacity=".92"/>
+        <ellipse cx="278" cy="150" rx="23" ry="20" fill="#F2C879"/>
+        <path d="M262 132 l-5 -18 15 9 Z" fill="#F2C879"/><path d="M294 132 l5 -18 -15 9 Z" fill="#F2C879"/>
+        <path d="M262 132 l-2 -9 6 5 Z" fill="#E0A94F"/><path d="M294 132 l2 -9 -6 5 Z" fill="#E0A94F"/>
+        <path d="M267 147 q5 4 9 0" stroke="#7a4e22" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+        <path d="M283 147 q5 4 9 0" stroke="#7a4e22" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+        <ellipse cx="278" cy="159" rx="5" ry="3.8" fill="#E0A94F" opacity=".5"/>
+        <circle cx="278" cy="158" r="2.1" fill="#5a3a18"/>
+        <path d="M273 164 q5 3 9 0" stroke="#7a4e22" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+        <path d="M300 138 q23 -9 31 -29 q0 20 -12 31 q9 -3 18 -14 q-3 23 -29 26 Z" fill="#FFF3D6" opacity=".85"/>
+      </g>
+    </g></svg></div>
+        <div class="pc-content">
+          <h3>Family</h3>
+          <p class="price">$14.99<span>/mo</span></p>
+          <ul><li>30 Bedtime Minis</li><li>5 Premium Storybooks</li><li>Multiple child profiles</li></ul>
+        </div>
       </article>
       <article class="card price-card">
-        <h3>Premium</h3>
-        <p class="price">$19.99<span>/mo</span></p>
-        <ul><li>30 Bedtime Minis</li><li>8 Premium Storybooks</li><li>Priority generation</li></ul>
+        <div class="pscene-wrap"><svg class="pscene" viewBox="0 0 338 301" preserveAspectRatio="xMaxYMax slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><g class="dt-moon">
+      <circle cx="276" cy="62" r="34" fill="#F2C879" opacity=".14"/>
+      <circle cx="276" cy="62" r="23" fill="#F2C879" opacity=".12"/>
+      <path fill="#FFE9B8" d="M278 32 a20 20 0 1 0 18 28 a14 14 0 1 1 -18 -28 Z"/>
+      <path fill="#F2C879" opacity=".55" d="M281 36 a16 16 0 1 0 14 23 a11 11 0 1 1 -14 -23 Z"/>
+    </g><circle class="dt-tw" cx="214" cy="40" r="1.5" fill="#F2C879"/><circle class="dt-tw d1" cx="250" cy="30" r="1.3" fill="#F2C879"/><circle class="dt-tw d2" cx="300" cy="64" r="1.5" fill="#F2C879"/><circle class="dt-tw" cx="322" cy="110" r="1.4" fill="#F2C879"/><circle class="dt-tw d1" cx="270" cy="150" r="1.2" fill="#F2C879"/><circle class="dt-tw d2" cx="232" cy="86" r="1.3" fill="#F2C879"/><circle class="dt-tw" cx="312" cy="44" r="1.2" fill="#F2C879"/><circle class="dt-tw d1" cx="292" cy="128" r="1.4" fill="#F2C879"/><circle class="dt-tw d2" cx="248" cy="120" r="1.1" fill="#F2C879"/><circle class="dt-tw" cx="244" cy="222" r="1.4" fill="#F2C879"/><circle class="dt-tw d1" cx="266" cy="250" r="1.5" fill="#F2C879"/><circle class="dt-tw d2" cx="300" cy="232" r="1.3" fill="#F2C879"/><circle class="dt-tw" cx="250" cy="272" r="1.2" fill="#F2C879"/><circle class="dt-tw d1" cx="284" cy="278" r="1.4" fill="#F2C879"/><circle class="dt-tw d2" cx="238" cy="246" r="1.2" fill="#F2C879"/><circle class="dt-tw" cx="320" cy="262" r="1.3" fill="#F2C879"/><circle class="dt-tw d1" cx="258" cy="214" r="1.1" fill="#F2C879"/><circle class="dt-tw d2" cx="276" cy="206" r="1.3" fill="#F2C879"/><circle class="dt-tw" cx="300" cy="214" r="1.2" fill="#F2C879"/><circle class="dt-tw d1" cx="312" cy="196" r="1.2" fill="#F2C879"/><g class="dt-cloud" style="transform-origin:250px 238px"><path transform="translate(250 238) scale(1.15)" fill="#3A3480" opacity=".55"
+      d="M0 8 q1 -9 11 -9 q4 -7 13 -5 q7 -1 10 5 q9 0 9 7 q0 6 -8 6 l-36 0 q-7 0 -7 -6 q0 -5 8 -4 Z"/></g><g class="dt-cloud d1" style="transform-origin:300px 150px"><path transform="translate(300 150) scale(0.8)" fill="#4A428F" opacity=".4"
+      d="M0 8 q1 -9 11 -9 q4 -7 13 -5 q7 -1 10 5 q9 0 9 7 q0 6 -8 6 l-36 0 q-7 0 -7 -6 q0 -5 8 -4 Z"/></g><g class="dt-cloud d2" style="transform-origin:232px 120px"><path transform="translate(232 120) scale(0.7)" fill="#4A428F" opacity=".35"
+      d="M0 8 q1 -9 11 -9 q4 -7 13 -5 q7 -1 10 5 q9 0 9 7 q0 6 -8 6 l-36 0 q-7 0 -7 -6 q0 -5 8 -4 Z"/></g><path class="dt-tw" transform="translate(236 60) scale(1.25)" fill="#FFF3D6" d="M0 -4 L1 -1 4 0 1 1 0 4 -1 1 -4 0 -1 -1 Z"/><path class="dt-tw d1" transform="translate(300 150) scale(1.00)" fill="#FFF3D6" d="M0 -4 L1 -1 4 0 1 1 0 4 -1 1 -4 0 -1 -1 Z"/><path class="dt-tw d2" transform="translate(246 116) scale(1.00)" fill="#FFF3D6" d="M0 -4 L1 -1 4 0 1 1 0 4 -1 1 -4 0 -1 -1 Z"/><circle class="dt-tw" cx="300" cy="64" r="1.6" fill="#F2C879"/><circle class="dt-tw d1" cx="320" cy="92" r="1.4" fill="#F2C879"/><circle class="dt-tw d2" cx="268" cy="88" r="1.3" fill="#F2C879"/><circle class="dt-tw" cx="332" cy="132" r="1.5" fill="#F2C879"/><circle class="dt-tw d1" cx="246" cy="138" r="1.2" fill="#F2C879"/><circle class="dt-tw d2" cx="312" cy="170" r="1.4" fill="#F2C879"/><circle class="dt-tw" cx="290" cy="200" r="1.3" fill="#F2C879"/><circle class="dt-tw d1" cx="262" cy="168" r="1.2" fill="#F2C879"/><circle class="dt-tw d2" cx="226" cy="150" r="1.3" fill="#F2C879"/><circle class="dt-tw" cx="340" cy="58" r="1.3" fill="#F2C879"/><circle class="dt-tw d1" cx="342" cy="120" r="1.4" fill="#F2C879"/><circle class="dt-tw d2" cx="326" cy="150" r="1.4" fill="#F2C879"/><circle class="dt-tw" cx="300" cy="116" r="1.4" fill="#F2C879"/><circle class="dt-tw d1" cx="272" cy="214" r="1.3" fill="#F2C879"/><path class="dt-tw" transform="translate(300 150) scale(1.00)" fill="#FFF3D6" d="M0 -4 L1 -1 4 0 1 1 0 4 -1 1 -4 0 -1 -1 Z"/><path class="dt-tw d1" transform="translate(272 120) scale(0.85)" fill="#FFF3D6" d="M0 -4 L1 -1 4 0 1 1 0 4 -1 1 -4 0 -1 -1 Z"/><g class="dt-cloud d2" style="transform-origin:300px 196px"><path transform="translate(300 196) scale(1.0)" fill="#4A428F" opacity=".4"
+      d="M0 8 q1 -9 11 -9 q4 -7 13 -5 q7 -1 10 5 q9 0 9 7 q0 6 -8 6 l-36 0 q-7 0 -7 -6 q0 -5 8 -4 Z"/></g><g class="dt-cloud" style="transform-origin:258px 150px"><path transform="translate(258 150) scale(0.85)" fill="#3A3480" opacity=".5"
+      d="M0 8 q1 -9 11 -9 q4 -7 13 -5 q7 -1 10 5 q9 0 9 7 q0 6 -8 6 l-36 0 q-7 0 -7 -6 q0 -5 8 -4 Z"/></g><g class="dt-fw"><line x1="250" y1="70" x2="270.0" y2="70.0" stroke="#F2C879" stroke-width="1.3" stroke-linecap="round"/><line x1="250" y1="70" x2="264.1" y2="84.1" stroke="#F2C879" stroke-width="1.3" stroke-linecap="round"/><line x1="250" y1="70" x2="250.0" y2="90.0" stroke="#F2C879" stroke-width="1.3" stroke-linecap="round"/><line x1="250" y1="70" x2="235.9" y2="84.1" stroke="#F2C879" stroke-width="1.3" stroke-linecap="round"/><line x1="250" y1="70" x2="230.0" y2="70.0" stroke="#F2C879" stroke-width="1.3" stroke-linecap="round"/><line x1="250" y1="70" x2="235.9" y2="55.9" stroke="#F2C879" stroke-width="1.3" stroke-linecap="round"/><line x1="250" y1="70" x2="250.0" y2="50.0" stroke="#F2C879" stroke-width="1.3" stroke-linecap="round"/><line x1="250" y1="70" x2="264.1" y2="55.9" stroke="#F2C879" stroke-width="1.3" stroke-linecap="round"/><circle cx="250" cy="70" r="2.4" fill="#FFF3D6"/></g><g class="dt-fw d1"><circle cx="236" cy="104" r="1.3" fill="#F2C879"/><circle cx="242" cy="111" r="1.3" fill="#F2C879"/><circle cx="248" cy="118" r="1.3" fill="#F2C879"/><circle cx="254" cy="104" r="1.3" fill="#F2C879"/><circle cx="260" cy="111" r="1.3" fill="#F2C879"/></g><g class="dt-castle">
+      <ellipse cx="300" cy="301" rx="60" ry="12" fill="#4A428F" opacity=".5"/>
+      <!-- main keep + towers -->
+      <path d="M262 301 l0 -52 9 0 0 -13 10 0 0 13 12 0 0 -20 9 0 0 20 12 0 0 -13 10 0 0 13 9 0 0 52 Z" fill="#7A6FD4" opacity=".95"/>
+      <path d="M262 301 l0 -52 9 0 0 52 Z" fill="#8E82E8" opacity=".4"/>
+      <!-- flags on the tallest turrets -->
+      <path d="M281 236 l0 -14" stroke="#8E82E8" stroke-width="1.5"/><path d="M281 222 l10 3 -10 4 Z" fill="#F2C879"/>
+      <path d="M314 236 l0 -14" stroke="#8E82E8" stroke-width="1.5"/><path d="M314 222 l10 3 -10 4 Z" fill="#F2C879"/>
+      <!-- battlement teeth -->
+      <path d="M266 249 l0 -5 5 0 0 5 M291 236 l0 -5 5 0 0 5 M317 249 l0 -5 5 0 0 5" stroke="#8E82E8" stroke-width="3" fill="none"/>
+      <!-- big arched door -->
+      <path d="M288 301 l0 -20 q7 -8 14 0 l0 20 Z" fill="#F2C879" opacity=".85"/>
+      <!-- lit windows -->
+      <rect x="270" y="266" width="6" height="9" rx="3" fill="#F2C879" opacity=".8"/>
+      <rect x="311" y="266" width="6" height="9" rx="3" fill="#F2C879" opacity=".8"/>
+      <rect x="292" y="252" width="6" height="8" rx="3" fill="#FFE9B8" opacity=".85"/>
+    </g><g class="dt-fox">
+      <g class="dt-float">
+        <path d="M296 176 q22 1 30 -13 q13 -19 38 -16 q-15 8 -18 25 q-3 18 -27 20 q-18 1 -23 -8 Z" fill="#F2C879" opacity=".92"/>
+        <ellipse cx="278" cy="150" rx="23" ry="20" fill="#F2C879"/>
+        <path d="M262 132 l-5 -18 15 9 Z" fill="#F2C879"/><path d="M294 132 l5 -18 -15 9 Z" fill="#F2C879"/>
+        <path d="M262 132 l-2 -9 6 5 Z" fill="#E0A94F"/><path d="M294 132 l2 -9 -6 5 Z" fill="#E0A94F"/>
+        <path d="M267 147 q5 4 9 0" stroke="#7a4e22" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+        <path d="M283 147 q5 4 9 0" stroke="#7a4e22" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+        <ellipse cx="278" cy="159" rx="5" ry="3.8" fill="#E0A94F" opacity=".5"/>
+        <circle cx="278" cy="158" r="2.1" fill="#5a3a18"/>
+        <path d="M273 164 q5 3 9 0" stroke="#7a4e22" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+        <path d="M300 138 q23 -9 31 -29 q0 20 -12 31 q9 -3 18 -14 q-3 23 -29 26 Z" fill="#FFF3D6" opacity=".85"/>
+      </g>
+    </g><path class="dt-tw d2" transform="translate(300 44) scale(1.25)" fill="#FFF3D6" d="M0 -4 L1 -1 4 0 1 1 0 4 -1 1 -4 0 -1 -1 Z"/><path class="dt-tw" transform="translate(250 190) scale(1.00)" fill="#FFF3D6" d="M0 -4 L1 -1 4 0 1 1 0 4 -1 1 -4 0 -1 -1 Z"/></svg></div>
+        <div class="pc-content">
+          <h3>Premium</h3>
+          <p class="price">$19.99<span>/mo</span></p>
+          <ul><li>30 Bedtime Minis</li><li>8 Premium Storybooks</li><li>Priority generation</li></ul>
+        </div>
       </article>
     </div>
   </section>
