@@ -380,6 +380,37 @@ footer a:hover{
   opacity:.55;
   margin-top:14px;
 }
+@media(max-width:520px){
+  footer {padding:34px 24px 24px;}
+  
+  .footer-main{
+    grid-template-columns:1fr;
+    justify-items:center;
+    text-align:center;
+    gap:18px;
+  }
+
+  .footer-main .brand,
+  .footer-tagline,
+  .footer-main .links{
+    justify-self:center;
+  }
+
+  .footer-main .links{
+    gap:20px;
+    flex-wrap:wrap;
+    justify-content:center;
+  }
+
+  .footer-tagline{
+    max-width:260px;
+  }
+
+  .byline{
+    margin-top:18px;
+    line-height:1.5;
+  }
+}
 
   /* magical reveal: rise + de-blur */
   .reveal{opacity:0;transform:translateY(38px) scale(.985);filter:blur(7px);
